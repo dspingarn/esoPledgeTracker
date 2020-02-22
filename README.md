@@ -12,10 +12,11 @@ Do add-ons already exist in-game to get this information? Probably yeah. But the
 
 ## Command Line Arguments
 
-| Argument                      | Description                                                                                                                                             |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-d, --date_shift [NUM_DAYS]` | Print the dungeons for `[NUM_DAYS]` before or after today's date <br> If no arguments are specified, or no flags are specified, assume the current date |
-| `-l, --list`                  | List all of the undaunted pledges                                                                                                                       |
-| `-v, --verbose`               | Make the output more verbose (i.e. list the dungeon sets for each dungeon)                                                                              |
-| `-h, --help`                  | Show the help message and exit                                                                                                                          |
-| `--version`                   | Show program's version number and exit                                                                                                                  |
+| Argument | Description |
+| --- | --- |
+| `-d, [NUM_DAYS]` | Print the dungeons for `[NUM_DAYS]` before or after today's date <br> If no arguments are specified, or no flags are specified, execute this and assume the current date |
+| `-l, --list`     | List all of the undaunted pledges, starting with the current dungeon |
+| `-v, --verbose`  | Make the output more verbose (i.e. list the dungeon sets for each dungeon) |
+| `-h, --help`     | Show the help message and exit |
+| `--version`      | Show program's version number and exit |
+| `--debug`        | Print the argument parser's argv values for debugging purposes |
