@@ -2,27 +2,6 @@
 
 from dungeon import Dungeon
 
-PLEDGES_LIGHT_MAJ = [
-    "Fungal Grotto I", "Banished Cells II", "Darkshade Caverns I",
-    "Elden Hollow II", "Wayrest Sewers I", "Spindleclutch II",
-    "Banished Cells I", "Fungal Grotto II", "Spindleclutch I",
-    "Darkshade Caverns II", "Elden Hollow I", "Wayrest Sewers II"
-]
-
-PLEDGES_LIGHT_GLI = [
-    "Selene's Web", "City of Ash II", "Crypt of Hearts I", "Volenfell",
-    "Blessed Crucible", "Direfrost Keep", "Vaults of Madness",
-    "Crypts of Hearts II", "City of Ash I", "Tempest Island",
-    "Blackheart Haven", "Arx Corinium"
-]
-
-PLEDGES_LIGHT_URG = [
-    "Fang Lair", "Scalecaller Peak", "Moon Hunter Peak", "March of Sacrifices",
-    "Depths of Malatar", "Frostvault", "Moongrave Fane", "Lair of Maarselok",
-    "Imperial City Prison", "Ruins of Mazzatun", "White-Gold Tower",
-    "Cradle of Shadows", "Bloodroot Forge", "Falkreath Hold"
-]
-
 DUNGEONS_MAJ = []
 DUNGEONS_GLI = []
 DUNGEONS_URG = []
