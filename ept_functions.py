@@ -76,7 +76,7 @@ def _get_dungeon_index_in_list(dungeon_name, dungeon_list):
 
 
 def _print_next_results(results, dungeon_list, query, verbose):
-    did_print = 0
+    did_print = -1
     for r in results:
         index = _get_dungeon_index_in_list(r.name, dungeon_list)
         if index == 0:
@@ -102,13 +102,13 @@ def handle_next(query, is_verbose):
     urg_results = _find_dungeons_that_match_query(query, DUNGEONS_URG)
     did_print = 0
     if _print_next_results(maj_results, _get_dungeons_sorted(DUNGEONS_MAJ),
-                           query, is_verbose) == 1:
+                           query, is_verbose):
         did_print = 1
     if _print_next_results(gli_results, _get_dungeons_sorted(DUNGEONS_GLI),
-                           query, is_verbose) == 1:
+                           query, is_verbose):
         did_print = 1
     if _print_next_results(urg_results, _get_dungeons_sorted(DUNGEONS_URG),
-                           query, is_verbose) == 1:
+                           query, is_verbose):
         did_print = 1
     if did_print == 0:
         print("Query \"{}\" returned no results.".format(query))

@@ -14,8 +14,8 @@ Do add-ons already exist in-game to get this information? Probably, yeah. But th
 
 | Argument | Description |
 | --- | --- |
-| `-d <days>`<br>`--date <days>` | Print the dungeons for `days` before or after today's date<br>If no arguments are specified, or no flags are specified, default to this function and assume the current date |
-| `-n <query>`<br>`--next <query>` | Searches for any dungeons containing `query` or with an item set with `query` in it, case-insensitive, and prints when the dungeon is happening next<br>If multiple words are required for the query, be sure to surround them with quotation marks |
+| `-d <days>` | Print the dungeons for `days` before or after today's date<br>If no arguments are specified, or no flags are specified, default to this function and assume the current date |
+| `-n <query>` | Searches for any dungeons containing `query` or with an item set with `query` in it, case-insensitive, and prints when the dungeon is happening next<br>If multiple words are required for the query, be sure to surround them with quotation marks |
 | `-l, --list`     | List all of the undaunted pledges, starting with the current dungeon |
 | `-v, --verbose`  | Make the output more verbose (i.e. list the dungeon sets for each dungeon) |
 | `-h, --help`     | Show the help message and exit |
