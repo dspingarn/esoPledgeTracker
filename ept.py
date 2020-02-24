@@ -1,5 +1,5 @@
 import argparse
-from ept_functions import handle_list, handle_date
+from ept_functions import handle_list, handle_next, handle_date
 
 parser = argparse.ArgumentParser(
     prog="ESO Pledge Tracker",
@@ -9,11 +9,12 @@ parser = argparse.ArgumentParser(
 # optional arguments have a dash in the argument name
 parser.add_argument(
     "-d",
+    "--date",
     type=int,
     help=
-    "The default command if none are specified. Print the dungeons for [DAYS] before or after today's date (e.g. -1 is yesterday, 1 is tomorrow). If no arguments are specified, default to the current date",
+    "The default command if none are specified. Print the dungeons for <days> before or after today's date (e.g. -1 is yesterday, 1 is tomorrow). If no arguments are specified, default to the current date",
     default=0,
-    metavar="[DAYS]")
+    metavar="<days>")
 parser.add_argument(
     "-l",
     "--list",
@@ -24,7 +25,13 @@ parser.add_argument("-v",
                     "--verbose",
                     help="Make the output more verbose",
                     action="store_true")
-parser.add_argument("--version", action="version", version="%(prog)s 1.0")
+parser.add_argument(
+    "-n",
+    "--next",
+    help="Get the next time a dungeon or dungeon set is available",
+    metavar="<query>")
+# added for the fun of it, version numbers are currently meaningless
+parser.add_argument("--version", action="version", version="%(prog)s 1.1")
 parser.add_argument(
     "--debug",
     action="store_true",
@@ -37,5 +44,7 @@ if (args.debug):
 
 if args.list:
     handle_list(args.verbose)
+elif args.next:
+    handle_next(args.next, args.verbose)
 else:
-    handle_date(args.verbose, args.d)
+    handle_date(args.date, args.verbose)
