@@ -5,8 +5,8 @@ import time
 
 
 def _get_cycle_index(shift, list_length):
-    # 02/12/2020 at 06:00:00 UTC, or 01:00:00 EST, because that's when this was first written
-    cycle_start_timestamp = 1581487200
+    # 02/24/2020 at 06:00:00 UTC, or 01:00:00 EST, corresponding to patch v5.3.0 (Harrowstorm DLC)
+    cycle_start_timestamp = 1582524000
     current_timestamp = time.time()
     elapsed_time = current_timestamp - cycle_start_timestamp
     seconds_per_day = 86400

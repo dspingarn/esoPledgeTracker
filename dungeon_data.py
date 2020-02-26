@@ -81,24 +81,6 @@ DUNGEONS_GLI.append(
             "Undaunted Infiltrator", "Medusa"))
 
 DUNGEONS_URG.append(
-    Dungeon("Fang Lair", "Thurvokun", "Caluurion's Legacy",
-            "Trappings of Invigoration", "Ulfnor's Favor"))
-DUNGEONS_URG.append(
-    Dungeon("Scalecaller Peak", "Zaan", "Jorvuld's Guidance", "Plague Slinger",
-            "Curse of Doylemish"))
-DUNGEONS_URG.append(
-    Dungeon("Moon Hunter Peak", "Vykosa", "Moon Hunter", "Savage Werewolf",
-            "Jailer's Tenacity"))
-DUNGEONS_URG.append(
-    Dungeon("March of Sacrifices", "Balorgh", "Hanu's Compassion",
-            "Blood Moon", "Haven of Ursus"))
-DUNGEONS_URG.append(
-    Dungeon("Depths of Malatar", "Symphony of Blades", "Auroran's Thunder",
-            "Scavenging Demise", "Frozen Watcher"))
-DUNGEONS_URG.append(
-    Dungeon("Frostvault", "Stonekeeper", "Icy Conjuror", "Tzogvin's Warband",
-            "Mighty Glacier"))
-DUNGEONS_URG.append(
     Dungeon("Moongrave Fane", "Grundwulf", "Hollowfang Thirst",
             "Dro'zakar's Claws", "Renald's Resolve"))
 DUNGEONS_URG.append(
@@ -122,3 +104,21 @@ DUNGEONS_URG.append(
 DUNGEONS_URG.append(
     Dungeon("Falkreath Hold", "Domihaus", "Draugr's Rest", "Pillar of Nirn",
             "Ironblood"))
+DUNGEONS_URG.append(
+    Dungeon("Fang Lair", "Thurvokun", "Caluurion's Legacy",
+            "Trappings of Invigoration", "Ulfnor's Favor"))
+DUNGEONS_URG.append(
+    Dungeon("Scalecaller Peak", "Zaan", "Jorvuld's Guidance", "Plague Slinger",
+            "Curse of Doylemish"))
+DUNGEONS_URG.append(
+    Dungeon("Moon Hunter Peak", "Vykosa", "Moon Hunter", "Savage Werewolf",
+            "Jailer's Tenacity"))
+DUNGEONS_URG.append(
+    Dungeon("March of Sacrifices", "Balorgh", "Hanu's Compassion",
+            "Blood Moon", "Haven of Ursus"))
+DUNGEONS_URG.append(
+    Dungeon("Depths of Malatar", "Symphony of Blades", "Auroran's Thunder",
+            "Scavenging Demise", "Frozen Watcher"))
+DUNGEONS_URG.append(
+    Dungeon("Frostvault", "Stonekeeper", "Icy Conjuror", "Tzogvin's Warband",
+            "Mighty Glacier"))
