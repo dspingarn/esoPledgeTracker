@@ -87,6 +87,12 @@ DUNGEONS_URG.append(
     Dungeon("Lair of Maarselok", "Maarselok", "Z'en's Redress",
             "Azureblight Reaper", "Dragon's Defilement"))
 DUNGEONS_URG.append(
+    Dungeon("Icereach", "Mother Ciannait", "Hiti's Hearth",
+            "Titanborn Strength", "Bani's Torment"))
+DUNGEONS_URG.append(
+    Dungeon("Unhallowed Grave", "Kjalnar's Nightmare", "Draugrkin's Grip",
+            "Aegis Caller", "Grave Guardian"))
+DUNGEONS_URG.append(
     Dungeon("Imperial City Prison", "Lord Warden", "Scathing Mage",
             "Sheer Venom", "Leeching Plate"))
 DUNGEONS_URG.append(

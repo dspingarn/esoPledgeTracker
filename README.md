@@ -1,8 +1,6 @@
 # ESO Pledge Tracker
 
-Up to date as of Patch 24 (Dragonhold)
-
-## \*CURRENTLY NOT ACCURATE UNTIL INFORMATION ABOUT THE NEW DLC DUNGEONS IS ADDED\*
+### \* Up to date as of Patch 25 (Harrowstorm) \*
 
 A simple CLI program to find out what the Undaunted Pledges are without logging into ESO.  
 For some reason, ESO doesn't have any APIs (as far as I can tell) that lets me get that information automatically so we're literally hard-coding the sequence of dungeons on rotation for each NPC quest giver.  
