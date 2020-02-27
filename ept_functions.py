@@ -85,8 +85,8 @@ def _print_next_results(results, dungeon_list, query, verbose):
             did_print = 1
         elif index != -1:
             print(
-                "Query \"{}\" matched with the dungeon \"{}\", which will happen in {} days"
-                .format(query, r.name, index))
+                "Query \"{}\" matched with {}, which will happen in {} days.".
+                format(query, r.name, index))
             did_print = 1
         if verbose and index != -1:
             _print_list_verbose([r])
