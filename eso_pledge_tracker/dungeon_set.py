@@ -1,7 +1,8 @@
-# Template for a Weapon/Monster Set
+# Template for a Dungeon or Monster Set
 from abc import ABC
 
 
+# abstract class
 class Set(ABC):
     name: str
     bonus: dict
@@ -11,6 +12,7 @@ class Set(ABC):
         self.bonus = bonus
 
 
+# the dictionary looks like {1: "bonus_one", 2: "bonus_two"}
 class MonsterSet(Set):
     def __init__(self, name, bonus_one, bonus_two):
         bonus_list = [bonus_one, bonus_two]

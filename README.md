@@ -10,7 +10,17 @@ Do add-ons already exist in-game to get this information? Probably, yeah. But th
 
 ## Requirements
 
-- Python
+- Python 3
+
+## Running This Project
+Assuming you're in the project root:
+
+`python eso_pledge_tracker/ept.py [-h] [-d <days>] [-l] [-v] [-n <query>] [--version] [--debug]`
+
+# Running the Tests
+This project uses unittest, so feel free to run with whatever arguments you like.
+
+`python -m unittest`
 
 ## Command Line Arguments
 
@@ -23,3 +33,19 @@ Do add-ons already exist in-game to get this information? Probably, yeah. But th
 | `-h, --help`     | Show the help message and exit |
 | `--version`      | Show program's version number and exit |
 | `--debug`        | Print the argument parser's argv values for debugging purposes |
+
+## File Structure
+
+```
+esoPledgeTracker/
+    eso_pledge_tracker/
+        dungeon_data.py
+        dungeon_set.py
+        dungeon.py
+        ept_functions.py
+        ept.py
+    tests/
+        __init__.py
+        test_dungeon_set.py
+    ...
+```

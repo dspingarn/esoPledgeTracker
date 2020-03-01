@@ -1,4 +1,3 @@
-from .context import eso_pledge_tracker
 from eso_pledge_tracker.dungeon_set import MonsterSet, DungeonSet
 
 import unittest
