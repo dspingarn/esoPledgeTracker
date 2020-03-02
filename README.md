@@ -15,7 +15,7 @@ Do add-ons already exist in-game to get this information? Probably, yeah. But th
 ## Running This Project
 Assuming you're in the project root:
 
-`python -m ept [-h] [-d <days>] [-l] [-v] [-n <query>] [--version] [--debug]`
+`python eso_pledge_tracker/ept.py [-h] [-d <days>] [-l] [-v] [-n <query>] [--version] [--debug]`
 
 # Running the Tests
 This project uses unittest, so feel free to run with whatever arguments you like.  

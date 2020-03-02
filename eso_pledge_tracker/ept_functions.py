@@ -70,8 +70,8 @@ def _find_dungeons_that_match_query(query, dungeon_list):
 
 
 def _get_dungeon_index_in_list(dungeon_name, dungeon_list):
-    for i in enumerate(dungeon_list):
-        if dungeon_list[i].name == dungeon_name:
+    for i, item in enumerate(dungeon_list):
+        if item.name == dungeon_name:
             return i
     return -1
 
