@@ -15,10 +15,11 @@ Do add-ons already exist in-game to get this information? Probably, yeah. But th
 ## Running This Project
 Assuming you're in the project root:
 
-`python eso_pledge_tracker/ept.py [-h] [-d <days>] [-l] [-v] [-n <query>] [--version] [--debug]`
+`python -m ept [-h] [-d <days>] [-l] [-v] [-n <query>] [--version] [--debug]`
 
 # Running the Tests
-This project uses unittest, so feel free to run with whatever arguments you like.
+This project uses unittest, so feel free to run with whatever arguments you like.  
+NOTE: Due to python issues (unless I goofed somewhere) you need to add eso_pledge_tracker and tests to your PYTHONPATH. I do this with a shell script (PYTHONPATH = ...)
 
 `python -m unittest`
 
@@ -40,6 +41,7 @@ This project uses unittest, so feel free to run with whatever arguments you like
 esoPledgeTracker/
     eso_pledge_tracker/
         dungeon_data.py
+        dungeon_set_data.py
         dungeon_set.py
         dungeon.py
         ept_functions.py
@@ -47,5 +49,8 @@ esoPledgeTracker/
     tests/
         __init__.py
         test_dungeon_set.py
+        test_dungeon.py
+        test_ept_functions.py
+        test_parser.py
     ...
 ```

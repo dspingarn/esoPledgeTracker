@@ -1,7 +1,7 @@
 # functions for handling CLI arguments
 
-from dungeon_data import DUNGEONS_MAJ, DUNGEONS_GLI, DUNGEONS_URG
 import time
+from dungeon_data import DUNGEONS_MAJ, DUNGEONS_GLI, DUNGEONS_URG
 
 
 def _get_cycle_index(shift, list_length):
@@ -24,11 +24,12 @@ def _get_dungeons_sorted(dungeon_list):
 
 
 def _print_list_verbose(dungeon_list):
-    for d in dungeon_list:
+    for dungeon in dungeon_list:
         print(
             "{}\nMonster Helm Set : {}\nLight Armor Set  : {}\nMedium Armor Set : {}\nHeavy Armor Set  : {}\n"
-            .format(d.name, d.weapon_set_unique, d.weapon_set_light,
-                    d.weapon_set_medium, d.weapon_set_heavy))
+            .format(dungeon.name, dungeon.weapon_set_unique,
+                    dungeon.weapon_set_light, dungeon.weapon_set_medium,
+                    dungeon.weapon_set_heavy))
 
 
 def handle_list(is_verbose):
@@ -55,21 +56,21 @@ def handle_list(is_verbose):
 def _find_dungeons_that_match_query(query, dungeon_list):
     search_list = []
     res = []
-    for d in dungeon_list:
+    for dungeon in dungeon_list:
         search_list = [
-            d.name.lower(),
-            d.weapon_set_unique.lower(),
-            d.weapon_set_light.lower(),
-            d.weapon_set_medium.lower(),
-            d.weapon_set_heavy.lower()
+            dungeon.name.lower(),
+            dungeon.weapon_set_unique.lower(),
+            dungeon.weapon_set_light.lower(),
+            dungeon.weapon_set_medium.lower(),
+            dungeon.weapon_set_heavy.lower()
         ]
         if [i for i in search_list if query.lower() in i]:
-            res.append(d)
+            res.append(dungeon)
     return res
 
 
 def _get_dungeon_index_in_list(dungeon_name, dungeon_list):
-    for i in range(len(dungeon_list)):
+    for i in enumerate(dungeon_list):
         if dungeon_list[i].name == dungeon_name:
             return i
     return -1
@@ -77,19 +78,19 @@ def _get_dungeon_index_in_list(dungeon_name, dungeon_list):
 
 def _print_next_results(results, dungeon_list, query, verbose):
     did_print = -1
-    for r in results:
-        index = _get_dungeon_index_in_list(r.name, dungeon_list)
+    for result in results:
+        index = _get_dungeon_index_in_list(result.name, dungeon_list)
         if index == 0:
             print("Query \"{}\" matched with {}, which is happening today.".
-                  format(query, r.name))
+                  format(query, result.name))
             did_print = 1
         elif index != -1:
             print(
                 "Query \"{}\" matched with {}, which will happen in {} days.".
-                format(query, r.name, index))
+                format(query, result.name, index))
             did_print = 1
         if verbose and index != -1:
-            _print_list_verbose([r])
+            _print_list_verbose([result])
     return did_print
 
 
@@ -118,13 +119,13 @@ def handle_date(shift, is_verbose):
     reg_dungeon_index = _get_cycle_index(shift, len(DUNGEONS_MAJ))
     dlc_array_index = _get_cycle_index(shift, len(DUNGEONS_URG))
 
-    if (shift == 0):
+    if shift == 0:
         message, tense = "Today's", "are"
-    elif (shift > 0):
+    elif shift > 0:
         message = "In {} days, the".format(
             shift) if shift != 1 else "Tomorrow's"
         tense = "will be"
-    elif (shift < 0):
+    elif shift < 0:
         message = "{} days ago, the".format(
             (shift * -1)) if shift != -1 else "Yesterday's"
         tense = "were"

@@ -47,7 +47,7 @@ DUNGEONS_GLI.append(
     Dungeon("Selene's Web", "Selene", "Vestments of the Warlock",
             "Hircine's Veneer", "Durok's Bane"))
 DUNGEONS_GLI.append(
-    Dungeon("City of Ash II", "Valkyn Scoria", "Burning Spellweave",
+    Dungeon("City of Ash II", "Valkyn Skoria", "Burning Spellweave",
             "Sunderflame", "Embershield"))
 DUNGEONS_GLI.append(
     Dungeon("Crypt of Hearts I", "Ilambris", "Shroud of the Lich", "Leviathan",

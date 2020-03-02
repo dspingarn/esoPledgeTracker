@@ -1,24 +1,28 @@
 import argparse
+import sys
 from ept_functions import handle_list, handle_next, handle_date
 
-def main(args):
-    if (args.debug):
-        print(vars(args))
 
-    if args.list:
-        handle_list(args.verbose)
-    elif args.next:
-        handle_next(args.next, args.verbose)
+def main():
+    # if --help or --version are chosen, they will take precedence over all else and the program will terminate after handling them
+    parsed_args = parse_args(sys.argv[1:])
+    if parsed_args.debug:
+        print(vars(parsed_args))
+
+    if parsed_args.list:
+        handle_list(parsed_args.verbose)
+    elif parsed_args.next:
+        handle_next(parsed_args.next, parsed_args.verbose)
     else:
-        handle_date(args.date, args.verbose)
+        handle_date(parsed_args.date, parsed_args.verbose)
 
 
-if __name__ == '__main__':
-
+def parse_args(args):
     parser = argparse.ArgumentParser(
         prog="ESO Pledge Tracker",
         description=
-        "A simple CLI program to print information about Undaunted Pledges in ESO")
+        "A simple CLI program to print information about Undaunted Pledges in ESO"
+    )
 
     # optional arguments have a dash in the argument name
     parser.add_argument(
@@ -45,12 +49,16 @@ if __name__ == '__main__':
         help="Get the next time a dungeon or dungeon set is available",
         metavar="<query>")
     # added for the fun of it, version numbers are currently meaningless
-    parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
+    parser.add_argument("--version",
+                        action="version",
+                        version="%(prog)s 0.1.0")
     parser.add_argument(
         "--debug",
         action="store_true",
         help="Print the argument parser's argv values for debugging purposes")
 
-    # if --help or --version are chosen, they will take precedence over all else and the program will terminate after handling them
-    args = parser.parse_args()
-    main(args)
+    return parser.parse_args(args)
+
+
+if __name__ == '__main__':
+    main()
