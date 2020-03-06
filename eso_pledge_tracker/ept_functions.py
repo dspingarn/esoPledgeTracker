@@ -77,7 +77,7 @@ def _get_dungeon_index_in_list(dungeon_name, dungeon_list):
 
 
 def _print_next_results(results, dungeon_list, query, verbose):
-    did_print = -1
+    did_print = 0
     for result in results:
         index = _get_dungeon_index_in_list(result.name, dungeon_list)
         if index == 0:
