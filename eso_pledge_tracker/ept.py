@@ -1,6 +1,6 @@
 import argparse
 import sys
-from ept_functions import handle_list, handle_next, handle_date
+from .ept_functions import handle_list, handle_next, handle_date
 
 
 def main():

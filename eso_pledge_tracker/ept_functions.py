@@ -1,7 +1,7 @@
 # functions for handling CLI arguments
 
 import time
-from dungeon_data import DUNGEONS_MAJ, DUNGEONS_GLI, DUNGEONS_URG
+from .dungeon_data import DUNGEONS_MAJ, DUNGEONS_GLI, DUNGEONS_URG
 
 
 def _get_cycle_index(shift, list_length):

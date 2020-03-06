@@ -1,6 +1,6 @@
 # List of all dungeons, sorted by Undaunted Pledge Master, with their unique sets
 
-from dungeon import Dungeon
+from .dungeon import Dungeon
 
 DUNGEONS_MAJ = []
 DUNGEONS_GLI = []
