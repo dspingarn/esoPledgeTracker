@@ -5,9 +5,10 @@ from eso_pledge_tracker.dungeon_set import MonsterSet, DungeonSet
 
 class DungeonSetCreationTest(unittest.TestCase):
     def test_dungeon_set(self):
-        dungeon_set = DungeonSet("weapon set", "second", "third", "fourth",
-                                 "fifth")
-        self.assertEqual("weapon set", dungeon_set.name)
+        dungeon_set = DungeonSet("set name", "weight", "second", "third",
+                                 "fourth", "fifth")
+        self.assertEqual("set name", dungeon_set.name)
+        self.assertEqual("weight", dungeon_set.weight)
         self.assertIsNone(dungeon_set.bonus.get(1))
         self.assertEqual("second", dungeon_set.bonus.get(2))
         self.assertEqual("third", dungeon_set.bonus.get(3))

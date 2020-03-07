@@ -23,7 +23,7 @@ class TestParser(unittest.TestCase):
         ept.main()
         mock_handle_list.assert_called_once_with(False)
 
-    @patch('eso_pledge_tracker.ept.handle_date')
+    @patch('eso_pledge_tracker.ept.handle_list')
     @patch('sys.argv', ['ept', '-lv'])
     def test_list_and_verbose(self, mock_handle_list):
         ept.main()
