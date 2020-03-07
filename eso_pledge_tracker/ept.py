@@ -1,9 +1,11 @@
+"""Main program entrypoint for the eso pledge tracker"""
 import argparse
 import sys
 from .ept_functions import handle_list, handle_next, handle_date
 
 
 def main():
+    """Main method"""
     # if --help or --version are chosen, they will take precedence over all else and the program will terminate after handling them
     parsed_args = parse_args(sys.argv[1:])
     if parsed_args.debug:
@@ -18,6 +20,7 @@ def main():
 
 
 def parse_args(args):
+    """Defines the argument parser"""
     parser = argparse.ArgumentParser(
         prog="ESO Pledge Tracker",
         description=

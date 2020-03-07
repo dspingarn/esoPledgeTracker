@@ -1,3 +1,4 @@
+"""Tests the creation of a DungeonSet and a MonsterSet object"""
 import unittest
 from eso_pledge_tracker.dungeon_set import MonsterSet, DungeonSet
 
@@ -13,7 +14,7 @@ class DungeonSetCreationTest(unittest.TestCase):
         self.assertEqual("fourth", dungeon_set.bonus.get(4))
         self.assertEqual("fifth", dungeon_set.bonus.get(5))
 
-    def test_bonus(self):
+    def test_monster_set(self):
         monster_set = MonsterSet("monster set", "first", "second")
         self.assertEqual("monster set", monster_set.name)
         self.assertEqual("first", monster_set.bonus.get(1))

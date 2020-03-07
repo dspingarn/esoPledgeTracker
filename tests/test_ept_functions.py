@@ -1,3 +1,4 @@
+"""Tests the ept functions"""
 import io
 import unittest
 from unittest.mock import MagicMock, patch
@@ -7,6 +8,7 @@ MOCKED_TIME = MagicMock(return_value=1582524000)
 
 
 class TestHandleDate(unittest.TestCase):
+    """Test the handle date method, where the current date is the beginning of the cycle"""
     @patch('time.time', MOCKED_TIME)
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_cycle_start(self, mock_stdout):

@@ -1,9 +1,9 @@
-# Template for a Dungeon or Monster Set
+"""Template for a Dungeon or Monster Set"""
 from abc import ABC
 
 
-# abstract class
 class Set(ABC):
+    """Abstract class for a generic set"""
     name: str
     bonus: dict
 
@@ -12,8 +12,10 @@ class Set(ABC):
         self.bonus = bonus
 
 
-# the dictionary looks like {1: "bonus_one", 2: "bonus_two"}
 class MonsterSet(Set):
+    """A MonsterSet is a Set with only two effects"""
+
+    # the dictionary looks like {1: "bonus_one", 2: "bonus_two"}
     def __init__(self, name, bonus_one, bonus_two):
         bonus_list = [bonus_one, bonus_two]
         bonus_dict = {i: b for i, b in enumerate(bonus_list, 1)}
@@ -21,6 +23,7 @@ class MonsterSet(Set):
 
 
 class DungeonSet(Set):
+    """A DungeonSet is a Set with five effects"""
     def __init__(self, name, bonus_two, bonus_three, bonus_four, bonus_five):
         bonus_list = [bonus_two, bonus_three, bonus_four, bonus_five]
         bonus_dict = {i: b for i, b in enumerate(bonus_list, 2)}

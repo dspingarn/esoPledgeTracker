@@ -1,4 +1,4 @@
-# List of all dungeons, sorted by Undaunted Pledge Master, with their unique sets
+"""List of all dungeons, sorted by Undaunted Pledge Master, with the names of the sets they drop"""
 
 from .dungeon import Dungeon
 

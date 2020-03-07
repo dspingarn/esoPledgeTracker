@@ -1,18 +1,18 @@
-# template class for a Dungeon
+"""template class for a Dungeon"""
 
 
 class Dungeon:
-
+    """A Dungeon has four different sets associated with it"""
     name: str
-    weapon_set_unique: str
-    weapon_set_light: str
-    weapon_set_medium: str
-    weapon_set_heavy: str
+    monster_set: str
+    dungeon_set_light: str
+    dungeon_set_medium: str
+    dungeon_set_heavy: str
 
-    def __init__(self, name, weapon_set_unique, weapon_set_light,
-                 weapon_set_medium, weapon_set_heavy):
+    def __init__(self, name, monster_set, dungeon_set_light,
+                 dungeon_set_medium, dungeon_set_heavy):
         self.name = name
-        self.weapon_set_unique = weapon_set_unique
-        self.weapon_set_light = weapon_set_light
-        self.weapon_set_medium = weapon_set_medium
-        self.weapon_set_heavy = weapon_set_heavy
+        self.monster_set = monster_set
+        self.dungeon_set_light = dungeon_set_light
+        self.dungeon_set_medium = dungeon_set_medium
+        self.dungeon_set_heavy = dungeon_set_heavy

@@ -1,4 +1,4 @@
-# functions for handling CLI arguments
+"""Functions for handling CLI arguments"""
 
 import time
 from .dungeon_data import DUNGEONS_MAJ, DUNGEONS_GLI, DUNGEONS_URG
@@ -27,12 +27,13 @@ def _print_list_verbose(dungeon_list):
     for dungeon in dungeon_list:
         print(
             "{}\nMonster Helm Set : {}\nLight Armor Set  : {}\nMedium Armor Set : {}\nHeavy Armor Set  : {}\n"
-            .format(dungeon.name, dungeon.weapon_set_unique,
-                    dungeon.weapon_set_light, dungeon.weapon_set_medium,
-                    dungeon.weapon_set_heavy))
+            .format(dungeon.name, dungeon.monster_set,
+                    dungeon.dungeon_set_light, dungeon.dungeon_set_medium,
+                    dungeon.dungeon_set_heavy))
 
 
 def handle_list(is_verbose):
+    """Handle -l argument to list the dungeon cycles"""
     dungeons_maj_sorted = _get_dungeons_sorted(DUNGEONS_MAJ)
     print("The dungeon cycle for Maj al-Ragath is:\n")
     if is_verbose:
@@ -59,10 +60,10 @@ def _find_dungeons_that_match_query(query, dungeon_list):
     for dungeon in dungeon_list:
         search_list = [
             dungeon.name.lower(),
-            dungeon.weapon_set_unique.lower(),
-            dungeon.weapon_set_light.lower(),
-            dungeon.weapon_set_medium.lower(),
-            dungeon.weapon_set_heavy.lower()
+            dungeon.monster_set.lower(),
+            dungeon.dungeon_set_light.lower(),
+            dungeon.dungeon_set_medium.lower(),
+            dungeon.dungeon_set_heavy.lower()
         ]
         if [i for i in search_list if query.lower() in i]:
             res.append(dungeon)
@@ -95,6 +96,7 @@ def _print_next_results(results, dungeon_list, query, verbose):
 
 
 def handle_next(query, is_verbose):
+    """Handle -n argument to search for next occurence of a dungeon matching a given string"""
     if len(query) < 3 or query.lower() == "the":
         print("Query not unique enough. Please use a different string.")
         return
@@ -116,6 +118,7 @@ def handle_next(query, is_verbose):
 
 
 def handle_date(shift, is_verbose):
+    """Handle -d argument to get the dungeons for a given date"""
     reg_dungeon_index = _get_cycle_index(shift, len(DUNGEONS_MAJ))
     dlc_array_index = _get_cycle_index(shift, len(DUNGEONS_URG))
 
