@@ -26,10 +26,10 @@ def _get_dungeons_sorted(dungeon_list):
 def _print_list_verbose(dungeon_list):
     for dungeon in dungeon_list:
         print(
-            "{}\nMonster Helm Set : {}\nLight Armor Set  : {}\nMedium Armor Set : {}\nHeavy Armor Set  : {}\n"
-            .format(dungeon.name, dungeon.monster_set,
-                    dungeon.dungeon_set_light, dungeon.dungeon_set_medium,
-                    dungeon.dungeon_set_heavy))
+            ("{}\nMonster Helm Set : {}\nLight Armor Set  : {}\n"
+             "Medium Armor Set : {}\nHeavy Armor Set  : {}\n").format(
+                 dungeon.name, dungeon.monster_set, dungeon.dungeon_set_light,
+                 dungeon.dungeon_set_medium, dungeon.dungeon_set_heavy))
 
 
 def handle_list(is_verbose):

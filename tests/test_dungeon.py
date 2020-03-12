@@ -1,16 +1,28 @@
-"""Tests the creation of a Dungeon object"""
+"""Tests the PledgeMaster enum and creation of a Dungeon object"""
 import unittest
-from eso_pledge_tracker import dungeon
+from eso_pledge_tracker.dungeon import Dungeon, PledgeMaster
+
+
+class TestPledgeMasterEnum(unittest.TestCase):
+    def test_pledge_master(self):
+        pledge_master = PledgeMaster.MAJ
+        self.assertEqual("Maj al-Ragath", pledge_master.value)
+        self.assertEqual("MAJ", pledge_master.name)
+        pledge_master_two = PledgeMaster('Maj al-Ragath')
+        self.assertEqual(pledge_master, pledge_master_two)
 
 
 class TestDungeon(unittest.TestCase):
     def test_dungeon(self):
-        dun = dungeon.Dungeon("name", "monster", "light", "medium", "heavy")
+        dun = Dungeon("name", "monster", "light", "medium", "heavy",
+                      PledgeMaster.MAJ, 0)
         self.assertEqual("name", dun.name)
         self.assertEqual("monster", dun.monster_set)
         self.assertEqual("light", dun.dungeon_set_light)
         self.assertEqual("medium", dun.dungeon_set_medium)
         self.assertEqual("heavy", dun.dungeon_set_heavy)
+        self.assertEqual(PledgeMaster.MAJ, dun.pledge_master)
+        self.assertEqual(0, dun.cycle_index)
 
 
 if __name__ == '__main__':

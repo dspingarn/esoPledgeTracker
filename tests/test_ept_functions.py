@@ -13,7 +13,8 @@ class TestHandleDate(unittest.TestCase):
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_cycle_start(self, mock_stdout):
         ept_functions.handle_date(0, False)
-        expected = "Today's Undaunted Pledges are: Fungal Grotto I, Selene's Web, and Moongrave Fane\n"
+        expected = ("Today's Undaunted Pledges are:"
+                    " Fungal Grotto I, Selene's Web, and Moongrave Fane\n")
         self.assertEqual(expected, mock_stdout.getvalue())
 
 
