@@ -2,22 +2,21 @@
 
 ### \* Up to date as of Patch 25 (Harrowstorm) \*
 
-A simple CLI program to find out what the Undaunted Pledges are without logging into ESO.  
-For some reason, ESO doesn't have any APIs (as far as I can tell) that lets me get that information automatically so we're literally hard-coding the sequence of dungeons on rotation for each NPC quest giver.  
-Therefore, every time a new dungeon is added, this will have to be updated. Joy.
+A project that started as a simple CLI program to find out what the Undaunted Pledges are without logging into ESO (Elder Scrolls Online).  
+For some reason, ESO doesn't have any out-of-game APIs that lets me get any information. Therefore, I grabbed the relevant data about dungeons, pledge timings, and dungeon sets, threw them into csv files, and made this simple python program to query that data.  
 
-Do add-ons already exist in-game to get this information? Probably, yeah. But the point is to _not_ log into the game to know this info. Because I'm lazy.
+Do add-ons already exist in-game to get this information? Probably, yeah. But the point is to _not_ log into the game to know this info. Because I'm lazy, but apparently not lazy enough given that I wrote this whole thing.
 
 ## Requirements
 
-- Python 3
+- Python 3 (written with 3.7)
 
 ## Running This Project
 Assuming you're in the project root:
 
 `python -m eso_pledge_tracker.ept [-h] [-d <days>] [-l] [-v] [-n <query>] [--version] [--debug]`
 
-# Running the Tests
+## Running the Tests
 This project uses unittest, so feel free to run with whatever additional arguments you like.  
 
 `python -m unittest` should do the trick.
@@ -50,5 +49,13 @@ esoPledgeTracker/
         test_dungeon.py
         test_ept_functions.py
         test_parser.py
+    data/
+        dungeon_set_relation.csv
+        dungeon_set.csv
+        monster_set.csv
     ...
 ```
+
+## Disclaimer
+
+The Elder Scrolls® Online developed by ZeniMax Online Studios LLC, a ZeniMax Media company. ZeniMax, The Elder Scrolls, ESO, Bethesda, Bethesda Softworks and related logos are registered trademarks or trademarks of ZeniMax Media Inc. in the US and/or other countries. All Rights Reserved.
