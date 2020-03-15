@@ -1,9 +1,10 @@
-"""Tests the PledgeMaster enum and creation of a Dungeon object"""
+"""Unit tests for the dungeon module."""
 import unittest
 from eso_pledge_tracker.dungeon import Dungeon, PledgeMaster
 
 
 class TestPledgeMasterEnum(unittest.TestCase):
+    """Tests the PledgeMaster enum."""
     def test_pledge_master(self):
         pledge_master = PledgeMaster.MAJ
         self.assertEqual("Maj al-Ragath", pledge_master.value)
@@ -13,6 +14,7 @@ class TestPledgeMasterEnum(unittest.TestCase):
 
 
 class TestDungeon(unittest.TestCase):
+    """Tests the creation of a Dungeon."""
     def test_dungeon(self):
         dun = Dungeon("name", "monster", "light", "medium", "heavy",
                       PledgeMaster.MAJ, 0)

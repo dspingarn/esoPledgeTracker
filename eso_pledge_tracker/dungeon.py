@@ -1,11 +1,11 @@
-"""Template class for a Dungeon. Defines a PledgeMaster enum and a Dungeon class."""
+"""Template class for a Dungeon. Also defines a PledgeMaster enum."""
 from enum import Enum
 
 
 # note to self: enum can have multiple values
 class PledgeMaster(Enum):
-    """Enum for the three Undaunted Pledge Masters:
-    Maj al-Ragath, Glirion the Redbeard, and Urgarlag Chief-Bane"""
+    """Enum for the three Undaunted PledgeMasters:
+    Maj al-Ragath, Glirion the Redbeard, and Urgarlag Chief-Bane."""
     MAJ = 'Maj al-Ragath'
     GLIRION = 'Glirion the Redbeard'
     URGARLAG = 'Urgarlag Chief-bane'
@@ -15,9 +15,9 @@ class Dungeon:
     """A Dungeon has four different sets associated with it:
     the Monster Set (unique to the Dungeon), a Light Armor Set,
     a Medium Armor Set, and a Heavy Armor Set.
-    In addition, each dungeon is associated with a pledge master, and
-    for indexing an index has been assigned to each dungeon for their
-    respective pledge master's dungeon cycle."""
+    In addition, each dungeon is associated with a PledgeMaster,
+    and for ordering purposes an index has been assigned to each dungeon
+    for their respective PledgeMaster's dungeon cycle."""
     name: str
     monster_set: str
     dungeon_set_light: str

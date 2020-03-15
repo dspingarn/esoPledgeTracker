@@ -1,9 +1,11 @@
-"""Reads in all of the dungeon, dungeon set, and monster set data
-from the .csv files in the data directory"""
+"""Reads in all of the Dungeon, DungeonSet, and MonsterSet data
+from the .csv files in the data directory. This populates the
+DUNGEONS lists for each pledge master, as well as the MONTER_SETS and
+DUNGEON_SETS dicts."""
 
 import csv
 from .dungeon import Dungeon, PledgeMaster
-from .dungeon_set import DungeonSet, MonsterSet
+from .dungeon_set import DungeonSet, MonsterSet, SetType
 
 DUNGEONS_MAJ = []
 DUNGEONS_GLI = []
@@ -48,3 +50,22 @@ with open('data/dungeon_set.csv', newline='') as csvfile:
         read_dungeon_set = DungeonSet(name, armor_class, effect_two,
                                       effect_three, effect_four, effect_five)
         DUNGEON_SETS[name] = read_dungeon_set
+
+
+def get_set_by_name(dungeon, dungeon_name):
+    """Find the Dungeon or Monster Set associated with this Dungeon and a set name."""
+    if dungeon_name == dungeon.monster_set:
+        return MONSTER_SETS[dungeon_name]
+    return DUNGEON_SETS[dungeon_name]
+
+
+def get_set_by_type(dungeon, set_type):
+    """Find the Set associated with this Dungeon for a given SetType."""
+    if set_type == SetType.Monster:
+        return MONSTER_SETS[dungeon.monster_set]
+    switch = {
+        SetType.Light: dungeon.dungeon_set_light,
+        SetType.Medium: dungeon.dungeon_set_medium,
+        SetType.Heavy: dungeon.dungeon_set_heavy,
+    }
+    return DUNGEON_SETS[switch.get(set_type)]
